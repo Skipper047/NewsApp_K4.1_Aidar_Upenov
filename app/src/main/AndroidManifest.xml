@@ -3,6 +3,7 @@
     package="com.example.newsapp_k41_aidar_upenov">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewsApp_K41_Aidar_Upenov">
         <activity
+            android:windowSoftInputMode="adjustResize"
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name">

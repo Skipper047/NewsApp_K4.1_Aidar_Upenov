@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.example.newsapp_k41_aidar_upenov.databinding.FragmentBoardBinding
+import com.example.newsapp_k41_aidar_upenov.models.Prefs
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
 
 
@@ -27,25 +28,21 @@ class BoardFragment : Fragment() {
         binding = FragmentBoardBinding.inflate(inflater, container, false)
         return binding.root
 
-
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var adapter = BoardAdapter {
-            findNavController().navigateUp()
+            close()
         }
         binding.viewPager.adapter = adapter
 
         val dotsIndicator = binding.dotsIndicator
         val viewPager = binding.viewPager
         dotsIndicator.setViewPager2(viewPager)
-
 //        binding.circleInd.setViewPager(binding.viewPager)
 //        binding.viewPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 //        val indicator :CircleIndicator3 = binding.circleInd
 //        indicator.setViewPager(binding.viewPager)
-
         binding.viewPager.registerOnPageChangeCallback(object : OnPageChangeCallback() {
             override fun onPageScrolled(
                 position: Int,
@@ -65,7 +62,7 @@ class BoardFragment : Fragment() {
 
 
         binding.btnSkip.setOnClickListener {
-            findNavController().navigateUp()
+            close()
         }
 
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object: OnBackPressedCallback(true) {
@@ -75,6 +72,10 @@ class BoardFragment : Fragment() {
 
         })
 
+    }
+    private fun close(){
+        Prefs(requireContext()).saveState()
+        findNavController().navigateUp()
     }
 
 

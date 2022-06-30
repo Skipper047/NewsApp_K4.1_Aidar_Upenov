@@ -49,6 +49,7 @@ class NewsAdapter(private val onClick: (position:Int)-> Unit): RecyclerView.Adap
         holder.bind(list[position])
         holder.itemView.setOnClickListener {
             onClick(position)
+
         }
     }
     override fun getItemCount()= list.size

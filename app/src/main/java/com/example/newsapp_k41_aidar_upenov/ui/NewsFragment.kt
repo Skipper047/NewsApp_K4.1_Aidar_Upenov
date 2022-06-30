@@ -34,6 +34,7 @@ class NewsFragment : Fragment() {
         binding.btnSave.setOnClickListener {
             save()
         }
+
     }
 
     private fun save() {

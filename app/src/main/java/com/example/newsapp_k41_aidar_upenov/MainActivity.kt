@@ -11,6 +11,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.newsapp_k41_aidar_upenov.databinding.ActivityMainBinding
+import com.example.newsapp_k41_aidar_upenov.models.Prefs
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,7 +36,13 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        navController.navigate(R.id.boardFragment)
+        if (!Prefs(this).isShown()){
+            navController.navigate(R.id.boardFragment)
+        }
+//        if (Prefs(this).isShown())
+//            navController.navigate(R.id.boardFragment)
+//        тоже условие без скобок
+
 
         navController.addOnDestinationChangedListener { navController: NavController, navDestination: NavDestination, bundle: Bundle? ->
             val fragments = arrayListOf(R.id.navigation_home,R.id.navigation_dashboard,R.id.navigation_notifications,R.id.profileFragment4)
