@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.newsapp_k41_aidar_upenov.App
 import com.example.newsapp_k41_aidar_upenov.R
 import com.example.newsapp_k41_aidar_upenov.databinding.FragmentHomeBinding
 import com.example.newsapp_k41_aidar_upenov.databinding.FragmentNewsBinding
@@ -40,7 +41,8 @@ class NewsFragment : Fragment() {
     private fun save() {
         val text = binding.editText.text.toString().trim()
         if (news == null){
-            news = News(text, System.currentTimeMillis())
+            news = News(0,text, System.currentTimeMillis())
+            App.database.newsDao().insert(news!!)
         }else {
             news?.title = text
 //            news?.createdAt = System.currentTimeMillis()
