@@ -34,7 +34,13 @@ class ProfileFragment : Fragment() {
 
         binding.ivGallery.setOnClickListener {
             getContent.launch("image/*")
+            change = true
         }
+        if (change){
+            binding.backImage.background = binding.ivGallery.drawable
+        }
+
+
 
 
         binding.editText.addTextChangedListener(object : TextWatcher{

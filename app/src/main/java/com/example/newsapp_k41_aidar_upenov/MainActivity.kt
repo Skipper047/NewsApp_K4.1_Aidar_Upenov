@@ -12,6 +12,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.newsapp_k41_aidar_upenov.databinding.ActivityMainBinding
 import com.example.newsapp_k41_aidar_upenov.models.Prefs
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,6 +36,9 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        if (FirebaseAuth.getInstance().currentUser == null)
+        navController.navigate(R.id.loginFragment)
 
         if (!Prefs(this).isShown()){
             navController.navigate(R.id.boardFragment)

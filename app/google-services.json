@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "559951123152",
+    "project_id": "newsapp-k4-1-aidar-upenov",
+    "storage_bucket": "newsapp-k4-1-aidar-upenov.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559951123152:android:a144d649acce3e0fbb04d5",
+        "android_client_info": {
+          "package_name": "com.example.newsapp_k41_aidar_upenov"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559951123152-u51k5nbjd1f4u28phr1dk6ki15u7d2v0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZDn9XoY8PrV25JQDPi_0HljJ3-k-woy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559951123152-u51k5nbjd1f4u28phr1dk6ki15u7d2v0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
