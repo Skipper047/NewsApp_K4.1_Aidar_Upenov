@@ -36,6 +36,7 @@ class NewsFragment : Fragment() {
             save()
         }
 
+
     }
 
     private fun save() {
